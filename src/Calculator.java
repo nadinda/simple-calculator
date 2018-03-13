@@ -18,7 +18,7 @@ public class Calculator {
         System.out.println("1. Tambah ");
         System.out.println("2. Kurang ");
         System.out.println("3. Kali ");
-        System.out.println("1. Bagi ");
+        System.out.println("4. Bagi ");
 
         System.out.print("Pilih Operator : " );
         operator = scanner.nextInt();
