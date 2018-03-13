@@ -26,22 +26,32 @@ public class Calculator {
     public void inputCalculator() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan Bilangan Pertama : ");
-        number1 = scanner.nextInt();
+        try {
+            System.out.print("Masukkan Bilangan Pertama : ");
+            number1 = scanner.nextInt();
 
-        System.out.print("Masukkan Bilangan Kedua : ");
-        number2 = scanner.nextInt();
+            System.out.print("Masukkan Bilangan Kedua : ");
+            number2 = scanner.nextInt();
 
-        System.out.println("1. Tambah ");
-        System.out.println("2. Kurang ");
-        System.out.println("3. Kali ");
-        System.out.println("4. Bagi ");
+            System.out.println("1. Tambah ");
+            System.out.println("2. Kurang ");
+            System.out.println("3. Kali ");
+            System.out.println("4. Bagi ");
 
-        System.out.print("Pilih Operator(1-4): " );
-        operator = scanner.nextInt();
+            System.out.print("Pilih Operator(1-4): ");
+            operator = scanner.nextInt();
+        }
+            catch (Exception ex){
+            inputMismatch();
+        }
+            finally {
+            calculatorSwitchCase();
+        }
+    }
 
-        calculatorSwitchCase();
-
+    public void inputMismatch(){
+        System.err.println("Hanya bisa input data numerik");
+        inputCalculator();
     }
 
     public void calculatorSwitchCase() {
@@ -63,7 +73,7 @@ public class Calculator {
                 printOperator = "/";
                 break;
             default:
-                System.out.println("Operator tidak tersedia");
+                System.err.println("Operator tidak tersedia");
         }
     }
 
