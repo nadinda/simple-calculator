@@ -6,7 +6,7 @@ public class Calculator {
     int operator;
     double jawaban;
 
-    public Calculator() {
+    public void inputCalculator() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Masukkan Bilangan Pertama : ");
@@ -20,7 +20,7 @@ public class Calculator {
         System.out.println("3. Kali ");
         System.out.println("1. Bagi ");
 
-        System.out.println("Pilih Operator : " );
+        System.out.print("Pilih Operator : " );
         operator = scanner.nextInt();
 
         calculatorSwitchCase();
@@ -42,6 +42,9 @@ public class Calculator {
                 jawaban = number1 / number2;
                 break;
         }
+    }
+
+    public void resultCalculator(){
         System.out.print(number1+" "+operator+" "+number2+" = "+jawaban);
     }
 }
